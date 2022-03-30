@@ -1,0 +1,1 @@
+select name, cast(Extract('Day' from payday) as integer) from loan
