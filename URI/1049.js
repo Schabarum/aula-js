@@ -46,4 +46,4 @@ switch (grupo) {
         break;
 }
 
-console.log(retString);
+console.log(`${retString}`);
