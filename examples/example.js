@@ -6,5 +6,4 @@ const pegarValores = (line) => line.split(" ").map(a => +a);
 const [a, b, c] = pegarValores(lines.shift());
 
 while (lines.length){
-
 }

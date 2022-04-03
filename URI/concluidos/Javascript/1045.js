@@ -4,25 +4,18 @@ var lines = input.split('\n');
 const pegarValores = (line) => line.split(" ").map(a => +a);
 const [a, b, c] = pegarValores(lines.shift());
 
-if (a >= b+c){
+if(a >= (b+c) || b >= (a+c) || c >= (a+b)){
     console.log('NAO FORMA TRIANGULO');
-}else{
-    if (a === b + c){
-        console.log('TRIANGULO RETANGULO');
-    };
-    if (a > b + c){
-        console.log('TRIANGULO OBTUSANGULO');
-    };
-    if (a < b + c){ 
-        console.log('TRIANGULO ACUTANGULO');
-    };
-    if (a === b && b === c){
-        console.log('TRIANGULO EQUILATERO');
-    };
-    if ((a === b && b !== c) || (a === c && a !== b)){
-        console.log('TRIANGULO ISOSCELES');
-    }
-}
+}else if(a*a == (b*b + c*c) || b*b == (a*a + c*c) || c*c == (a*a + b*b)){
+    console.log('TRIANGULO RETANGULO');
+}else if(a*a > (b*b + c*c) || b*b > (a*a + c*c) || c*c > (a*a + b*b)){
+    console.log('TRIANGULO OBTUSANGULO');
+}else if(a*a < (b*b + c*c) || b*b < (a*a + c*c) || c*c < (a*a + b*b))
+    console.log('TRIANGULO ACUTANGULO');
+if(a == b && a == c)
+    console.log('TRIANGULO EQUILATERO');
+if((a == b && a != c)  || (a == c && a != b) || (b == c && b != a))
+    console.log('TRIANGULO ISOSCELES');
 
 /*
 -se A ≥ B+C, apresente a mensagem: NAO FORMA TRIANGULO
