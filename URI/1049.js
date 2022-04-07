@@ -4,46 +4,30 @@ var lines = input.split('\n');
 let grupo = lines.shift();
 let segmento = lines.shift();
 let alimentacao = lines.shift();
-let retString;
-switch (grupo) {
-    case 'vertebrado':
-        switch (segmento) {
-            case 'ave':
-                if (alimentacao === 'carnivoro'){
-                    retString = 'aguia';
-                }else if (alimentacao === 'onivoro'){
-                    retString = 'pomba';
-                }
-                break;
-        
-            case 'mamifero':
-                if (alimentacao === 'onivoro'){
-                    retString = 'homem';
-                }else if (alimentacao === 'herbivoro'){
-                    retString = 'vaca';
-                }
-                break;
-        }
-        break;
-    case 'invertebrado':
-        switch (segmento) {
-            case 'inseto':
-                if (alimentacao === 'hematofago'){
-                    retString = 'pulga'
-                }else if (alimentacao === 'herbivoro'){
-                    retString = 'lagarta'
-                }
-                break;
-        
-            case 'anelideo':
-                if (alimentacao === 'hematofago'){
-                    retString = 'sanguessuga'
-                }else if (alimentacao === 'onivoro'){
-                    retString = 'minhoca'
-                }
-                break;
-        }
-        break;
-}
+let animal = '';
 
-console.log(`${retString}`);
+if (grupo == 'vertebrado' && segmento == 'ave' && alimentacao == 'carnivoro'){
+    animal = 'aguia'
+}
+if (grupo == 'vertebrado' && segmento == 'ave' && alimentacao == 'onivoro'){
+    animal = 'pomba'
+}
+if (grupo == 'vertebrado' && segmento == 'mamifero' && alimentacao == 'onivoro'){
+    animal = 'homem'
+}
+if (grupo == 'vertebrado' && segmento == 'mamifero' && alimentacao == 'herbivoro'){
+    animal = 'vaca'
+}
+if (grupo == 'invertebrado' && segmento == 'inseto' && alimentacao == 'hematofago'){
+    animal = 'pulga'
+}
+if (grupo == 'invertebrado' && segmento == 'inseto' && alimentacao == 'herbivoro'){
+    animal = 'lagarta'
+}
+if (grupo == 'invertebrado' && segmento == 'anelideo' && alimentacao == 'hematofago'){
+    animal = 'sanguessuga'
+}
+if (grupo == 'invertebrado' && segmento == 'anelideo' && alimentacao == 'onivoro'){
+    animal = 'minhoca'
+}
+console.log(animal);
