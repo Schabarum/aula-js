@@ -1,7 +1,2 @@
-import math
-
-primo = 30
-
-limite = math.floor(math.pow(primo, 1/2))
-
-print(limite)
+for x in range (2,5):
+    print(x)
