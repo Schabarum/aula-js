@@ -1,44 +1,10 @@
-[hinicio, minicio, hfinal, mfinal] = input().split(" ")
+h1,m1,h2,m2=list(map(int,input().split()))
+start=h1*60+m1
+end=h2*60+m2
+dif=end-start
+if dif<=0:
+    dif=dif+24*60
 
-hinicio = int(hinicio)
-minicio = int(minicio)
-hfinal = int(hfinal)
-mfinal = int(mfinal)
-
-if hinicio == hfinal: # horas iguais
-    horas = 24
-    if minicio == mfinal:
-        minutos = 0
-    elif minicio < mfinal:
-        minutos = mfinal - minicio
-        horas = 0
-    elif minicio > mfinal:
-        restoM = minicio - mfinal
-        minutos = 60 - restoM
-        horas -= 1
-
-elif hinicio < hfinal: # Hora de inicio menor que hora final
-    horas = hfinal - hinicio 
-    if minicio == mfinal:
-        minutos = 0
-    elif minicio < mfinal:
-        minutos = mfinal - minicio
-    elif mfinal < minicio:
-        restoM = minicio - mfinal
-        minutos = 60 - restoM
-        horas -= 1
-
-elif hinicio > hfinal: # Hora inicial maior que hora final
-    restoH = 24 - hinicio
-    horas = restoH + hinicio
-    if minicio == mfinal:
-        minutos = 0
-    elif minicio < mfinal:
-        minutos = mfinal - minicio
-    elif mfinal < minicio:
-        restoM = minicio - mfinal
-        minutos = 60 - restoM
-        horas -= 1
-
-result = 'O JOGO DUROU {hora} HORA(S) E {minuto} MINUTO(S)' 
-print (result.replace("{hora}", str(horas)).replace("{minuto}", str(minutos)))
+h=dif//60
+m=dif%60
+print(f'O JOGO DUROU {h} HORA(S) E {m} MINUTO(S)')
