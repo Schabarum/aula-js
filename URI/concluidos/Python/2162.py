@@ -1,31 +1,11 @@
-montanhas = int(input())
-
-lnongolia = False
-lMontanhas = input().split(" ")
-medida = 0
-penultimoValor = 0
-ultimoValor = 0
-for i in range (0, montanhas):
-    medida = int(lMontanhas[i])
-    if penultimoValor == 0 and ultimoValor > 0:
-        penultimoValor = ultimoValor
-
-    if ultimoValor == 0:
-        ultimoValor = medida
-
-    if penultimoValor > ultimoValor and ultimoValor < medida:
-        lnongolia = True
-    elif ultimoValor > penultimoValor and medida > ultimoValor:
-        lnongolia = True
-    else:
-        lnongolia = False
-
-    if ultimoValor > 0:
-        penultimoValor = ultimoValor
-    ultimoValor = medida
-
-if lnongolia:
-    print('1')
+paisagens = int(input())
+montanhas = [int(x) for x in input().split()]
+if paisagens == 2 and montanhas[0] == montanhas[1]:
+    pico = 0
 else:
-    print('0')
-    
+    pico = 1
+    for i in range(1, paisagens-1):
+        if not ((montanhas[i] < montanhas[i-1] and montanhas[i] < montanhas[i+1]) or (montanhas[i] > montanhas[i-1] and montanhas[i] > montanhas[i+1])):
+            pico = 0
+            break
+print(pico)
